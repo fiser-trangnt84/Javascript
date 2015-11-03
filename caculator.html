@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+	<div> 
+		<input id="sum" type="text" value="0"><br>
+	</div>
+	<button id="revert">Revert</button>
+</body>
+<script type="text/javascript">
+	for (var i = 0; i <= 9;  i++){
+		$('div').append("<button value =" + i + ">" + i + "</button>");
+		if (i % 3 == 0){
+			$('div').append('<br>');
+		}
+	}
+	var sum = 0;
+	$('button').click(function(){
+		sum+= parseInt($(this).val());
+		$("#sum").val(sum);
+	});
+	$("#revert").click(function(){
+		sum = 0;
+		$("#sum").val(sum);
+	})
+
+</script>
+</html>
